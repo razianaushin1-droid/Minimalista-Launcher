@@ -149,10 +149,10 @@
       </span>
       <p class="eyebrow">Privacy Policy</p>
       <h1>Your data<br /><span class="dim">stays yours.</span></h1>
-      <p class="sub">Minimalista is a minimalist Android home-screen launcher, built to be private by default — no accounts, no ads, no advertising trackers, and no servers of our own. Almost everything happens on your device; the two exceptions are weather requests and anonymous crash reports.</p>
+      <p class="sub">Minimalista is a minimalist Android home-screen launcher, built to be private by default — no accounts, no ads, no advertising trackers, and no servers of our own. Almost everything happens on your device; the exceptions are weather requests, anonymous crash reports, and anonymous usage statistics you can turn off.</p>
       <div class="meta">
         <span>Effective&nbsp;<b>5 September 2026</b></span>
-        <span>Last updated&nbsp;<b>5 September 2026</b></span>
+        <span>Last updated&nbsp;<b>2 October 2026</b></span>
         <span>App&nbsp;<b>com.minimalista.launcher</b></span>
       </div>
     </div>
@@ -196,7 +196,7 @@
     </section>
 
     <div class="card accent" style="margin-top:6px">
-      <p style="margin:0"><strong>The short version.</strong> Two things leave your phone, both over encrypted (HTTPS) connections: a <strong>weather request</strong> — your approximate location or a city name you type — sent to Open-Meteo for a forecast, and <strong>anonymous crash reports</strong> sent to Firebase Crashlytics (Google) so we can fix bugs. We run no servers of our own and never sell your data or share the contents of your notes, contacts, or screens.</p>
+      <p style="margin:0"><strong>The short version.</strong> Three things leave your phone, all over encrypted (HTTPS) connections: a <strong>weather request</strong> — your approximate location or a city name you type — sent to Open-Meteo for a forecast; <strong>anonymous crash reports</strong> sent to Firebase Crashlytics (Google) so we can fix bugs; and <strong>anonymous usage statistics</strong> (which features are used) sent to Firebase Analytics (Google), which you can turn off in Settings → Privacy. We run no servers of our own and never sell your data or share the contents of your notes, contacts, or screens.</p>
       <div class="pill-row">
         <span class="pill">No ads</span>
         <span class="pill">No data selling</span>
@@ -252,6 +252,14 @@
             </div>
           </div>
           <div class="perm">
+            <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+            <div class="body">
+              <div class="top"><span class="name">Anonymous usage statistics</span><span class="tag sent">Sent to Firebase Analytics</span></div>
+              <p class="why">Shows us which features are used so we can improve them — for example, that onboarding was finished, a widget type was added, a Premium screen was opened, or a feature was switched on.</p>
+              <p class="where">Sent to Firebase Analytics (Google) with a random app-instance ID, app version, device model, OS version, and approximate country. Never the names of your apps, your contacts, notifications, notes, or anything you type; no advertising ID. On by default — turn it off anytime in Settings → Privacy → Share anonymous usage.</p>
+            </div>
+          </div>
+          <div class="perm">
             <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2.5"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
             <div class="body">
               <div class="top"><span class="name">Calendar</span><code>READ_CALENDAR</code><span class="tag local">Stays on device</span></div>
@@ -271,8 +279,16 @@
             <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
             <div class="body">
               <div class="top"><span class="name">Notification access</span><code>BIND_NOTIFICATION_LISTENER_SERVICE</code><span class="tag local">Stays on device</span></div>
-              <p class="why">Powers Focus Mode’s notification filter (dismissing alerts from apps that aren’t allow-listed) and shows / controls the media card.</p>
-              <p class="where">Notifications are processed on your device only. We never read, store, or transmit their contents off the device.</p>
+              <p class="why">Powers Focus Mode’s notification filter (dismissing alerts from apps that aren’t allow-listed), shows / controls the media card, and — only if you turn on Quiet Digest — holds notifications from the apps you choose until your chosen delivery times.</p>
+              <p class="where">Notifications are processed on your device only and never transmitted off it. With Quiet Digest on, the title and text of notifications from the apps you chose are kept in Minimalista’s private storage until you view or clear them, or turn Quiet Digest off. Nothing is kept for any other app, and Quiet Digest is off unless you turn it on.</p>
+            </div>
+          </div>
+          <div class="perm">
+            <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="4" rx="1.5"/><rect x="4" y="9" width="16" height="12" rx="2"/><path d="M8 14h8"/></svg></span>
+            <div class="body">
+              <div class="top"><span class="name">Post notifications</span><code>POST_NOTIFICATIONS</code><span class="tag opt">Optional</span></div>
+              <p class="why">Lets Quiet Digest show its one summary notification at your chosen times. Asked only when you turn Quiet Digest on.</p>
+              <p class="where">The summary is created on your device. Nothing is sent anywhere.</p>
             </div>
           </div>
           <div class="perm">
@@ -287,16 +303,16 @@
             <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
             <div class="body">
               <div class="top"><span class="name">Contacts</span><code>READ_CONTACTS</code><span class="tag local">Stays on device</span></div>
-              <p class="why">Lets you search your contacts from the launcher’s universal search bar.</p>
+              <p class="why">Lets you search your contacts from the launcher’s universal search bar, and shows your starred contacts in the Favourites widget.</p>
               <p class="where">Read on your device only. Never uploaded.</p>
             </div>
           </div>
           <div class="perm">
             <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
             <div class="body">
-              <div class="top"><span class="name">Installed apps</span><code>QUERY_ALL_PACKAGES</code><span class="tag local">Stays on device</span></div>
+              <div class="top"><span class="name">Installed apps</span><code>&lt;queries&gt; launcher apps</code><span class="tag local">Stays on device</span></div>
               <p class="why">Lists, searches, categorises, and launches the apps on your phone — the core job of a launcher.</p>
-              <p class="where">The list of your apps stays on your device.</p>
+              <p class="where">No special permission: Minimalista only sees apps that appear in your app drawer (launchable apps). The list stays on your device.</p>
             </div>
           </div>
           <div class="perm">
@@ -311,7 +327,7 @@
             <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span>
             <div class="body">
               <div class="top"><span class="name">Billing</span><code>com.android.vending.BILLING</code><span class="tag sent">Google Play</span></div>
-              <p class="why">Offers Minimalista Premium — the yearly subscription (7-day free trial) and the one-time lifetime purchase.</p>
+              <p class="why">Offers Minimalista Premium — the yearly subscription and the one-time lifetime purchase. The 7-day free trial starts by itself when you finish setting up the app and needs no payment.</p>
               <p class="where">Purchases are processed entirely by Google Play Billing. We never see or store your payment details. See “Purchases”.</p>
             </div>
           </div>
@@ -321,13 +337,16 @@
       <!-- 2 on-device -->
       <section id="ondevice">
         <div class="sec-head"><span class="sec-num">2</span><h2>Data you create stays on your device</h2></div>
-        <p>Your preferences, home drawers, favourites, dock, notes, to-do tasks, usage goals, Focus settings, wallpaper cache, and premium status are stored in Minimalista’s private app storage on your device. They are never uploaded to us — we operate no servers and have no way to receive them.</p>
+        <p>Your preferences, home drawers, favourites, dock, notes, to-do tasks, usage goals, Focus settings, widget data (such as your water count, habits and countdowns), Quiet Digest notifications waiting for delivery, your usage goals and Mindful Open / Scroll Break settings, wallpaper cache, free-trial dates, and premium status are stored in Minimalista’s private app storage on your device. They are never uploaded to us — we operate no servers and have no way to receive them.</p>
+        <p>The pause screens keep even less: the reason you pick on Mindful Open is never saved, and Scroll Break’s count of recent app opens lives only in memory and is gone when the app closes. Quiet Digest’s delivery schedule is restored after your phone restarts (the standard <code>RECEIVE_BOOT_COMPLETED</code> permission); nothing is read or sent when that happens.</p>
       </section>
 
       <!-- 3 purchases -->
       <section id="purchases">
         <div class="sec-head"><span class="sec-num">3</span><h2>Purchases (Minimalista Premium)</h2></div>
-        <p>Premium is sold through <strong>Google Play Billing</strong>. When you subscribe, start a free trial, or buy the lifetime plan, <strong>Google</strong> — not Minimalista — handles the transaction and your payment method. We receive only the entitlement result (whether a plan is active), stored on your device to unlock premium features. Your card, billing address, and Google account details are never shared with us. Google’s handling of your purchase is governed by the <a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+        <p>Minimalista is free to use. Premium unlocks the widget board and customisation (themes, fonts, clocks, wallpapers and layout). The 7-day free trial starts automatically when you finish setting up the app: no payment method or Google account details are involved, and its dates are kept only on your device. When the trial ends, the launcher keeps working and your current look stays; only changing Premium features requires a plan.</p>
+        <p><strong>Cancelling.</strong> The trial needs nothing cancelled — it simply ends. A yearly subscription can be cancelled anytime in the <strong>Google Play Store → Profile → Payments &amp; subscriptions → Subscriptions → Minimalista → Cancel subscription</strong>; you keep Premium until the end of the period you paid for. Uninstalling the app does not cancel a subscription. The lifetime purchase is a one-time payment with nothing to cancel. Refunds are handled by Google Play under its refund policy.</p>
+        <p>Premium is sold through <strong>Google Play Billing</strong>. When you subscribe or buy the lifetime plan, <strong>Google</strong> — not Minimalista — handles the transaction and your payment method. We receive only the entitlement result (whether a plan is active), stored on your device to unlock premium features. Your card, billing address, and Google account details are never shared with us. Google’s handling of your purchase is governed by the <a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
       </section>
 
       <!-- 4 third parties -->
@@ -339,7 +358,9 @@
         <p>App distribution and in-app purchases are handled by Google Play / Google Play Billing. See the <a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
         <h3>Firebase Crashlytics — crash reporting</h3>
         <p>To find and fix crashes, Minimalista uses <a class="link" href="https://firebase.google.com/products/crashlytics" target="_blank" rel="noopener">Firebase Crashlytics</a>, a crash-reporting service operated by Google. When the app crashes or hits a stability issue, it sends a report containing the stack trace, app version, device model, OS version, and a randomly-generated Firebase installation ID. It does <strong>not</strong> include your notes, contacts, messages, or the contents of your screens, and it is not linked to your identity. Reports are retained by Google per Firebase’s data-retention policy (typically up to 90 days). See the data Crashlytics collects at <a class="link" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a> and the <a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
-        <p class="lead" style="margin-top:14px">We use <strong>no</strong> advertising SDKs, no analytics used for advertising, and <strong>no</strong> third-party trackers. The only third-party SDK that transmits data is Firebase Crashlytics, described above, used solely for crash diagnostics.</p>
+        <h3>Firebase Analytics — anonymous usage statistics</h3>
+        <p>To understand which features help people, Minimalista uses <a class="link" href="https://firebase.google.com/products/analytics" target="_blank" rel="noopener">Firebase Analytics</a>, operated by Google. It records feature-level events (for example: an onboarding step reached, a widget type added, a Premium screen viewed, a purchase started or completed, a feature switched on, and which button was chosen on a pause screen) together with a random app-instance ID, app version, device model, OS version, and approximate country. It never records the names of your apps, your contacts, notifications, notes, typed reasons, or any other content you create. Advertising-ID collection and ad personalisation are disabled. You can turn it off anytime in <strong>Settings → Privacy → Share anonymous usage</strong>; Google retains this data per its <a class="link" href="https://support.google.com/analytics/answer/7667196" target="_blank" rel="noopener">data-retention settings</a>. See <a class="link" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>.</p>
+        <p class="lead" style="margin-top:14px">We use <strong>no</strong> advertising SDKs and <strong>no</strong> analytics for advertising. The only third-party SDKs that transmit data are Firebase Crashlytics and Firebase Analytics, described above, used solely for crash diagnostics and improving the app.</p>
       </section>
 
       <!-- 5 data safety -->
@@ -352,6 +373,7 @@
           <div class="ds-row"><span class="k">Data used for advertising or tracking</span><span class="v no">None</span></div>
           <div class="ds-row"><span class="k">Location / city sent to Open-Meteo for weather</span><span class="v">Not stored, not linked to you</span></div>
           <div class="ds-row"><span class="k">Crash &amp; diagnostic data sent to Firebase Crashlytics (Google)</span><span class="v">Anonymous, not linked to you</span></div>
+          <div class="ds-row"><span class="k">App interactions sent to Firebase Analytics (Google)</span><span class="v">Anonymous, optional — can be turned off</span></div>
           <div class="ds-row"><span class="k">Encryption in transit</span><span class="v">Yes — HTTPS</span></div>
           <div class="ds-row"><span class="k">You can request deletion</span><span class="v">Yes — clear data / uninstall</span></div>
         </div>
@@ -393,7 +415,7 @@
       <!-- 10 international -->
       <section id="international">
         <div class="sec-head"><span class="sec-num">10</span><h2>International users</h2></div>
-        <p>Minimalista does not transfer your personal data internationally, because it does not collect it on any server of ours. Weather requests you initiate are sent directly from your device to Open-Meteo; crash reports are sent to Firebase Crashlytics (Google); and your purchases are processed by Google. These providers may process data on servers outside your country, governed by their own policies, linked above.</p>
+        <p>Minimalista does not transfer your personal data internationally, because it does not collect it on any server of ours. Weather requests you initiate are sent directly from your device to Open-Meteo; crash reports and usage statistics are sent to Firebase (Google); and your purchases are processed by Google. These providers may process data on servers outside your country, governed by their own policies, linked above.</p>
       </section>
 
       <!-- 11 changes -->
